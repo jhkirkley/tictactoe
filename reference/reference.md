@@ -1,0 +1,208 @@
+Problem Solving with Functions
+
+Let's look at a practical example. Say that we're working on a TicTacToe game.
+
+We're not going to build the actual game, just write out the logic that would determine the winner.
+
+In TicTacToe, there are nine possible values (for every cell on the board):
+
+| a | b | c |
+| d | e | f |
+| g | h | i |
+Each of these values will start as null, until a user assigns them a new value, either 'o' or 'x'
+
+To play around with this invisible TicTacToe board, we've provided some code:
+
+function cellValue(key) {
+  switch(key) {
+    case 'a': return null;
+    case 'b': return null;
+    case 'c': return null;
+    case 'd': return null;
+    case 'e': return null;
+    case 'f': return null;
+    case 'g': return null;
+    case 'h': return null;
+    case 'i': return null;
+    default : return null;
+  }
+}
+To assign a value (x, o) to any cell on the board, edit the return value for the corresponding case. For example, if you want the board to read:
+
+| null | null |   x  |
+| null |   o  | null |
+| null |   o  |   x  |
+You would edit the switch statement like such:
+
+function cellValue(key) {
+  switch(key) {
+    case 'a': return null;
+    case 'b': return null;
+    case 'c': return 'x';
+    case 'd': return null;
+    case 'e': return 'o';
+    case 'f': return null;
+    case 'g': return null;
+    case 'h': return 'o';
+    case 'i': return 'x';
+    default : return null;
+  }
+}
+Who is the Winner?
+
+Now, let's write a function that determines the winner based on the values of a, b, c, d, e, f, g, h, and i.
+
+We'll call it getWinner and it will give us back either 'x' (if X has won), 'o' (if O has won), or null (if neither side has won).
+
+function getWinner() {
+}
+So where do we go from here?
+
+One way to determine the winner might be to check whether X has won and then to check whether O has won. What if two functions existed that would magically determine this for us?
+
+We could call them winnerIsX and winnerIsO. winnerIsX could give us back true if X has won and false if it hasn't. If such functions existed, we could rewrite getWinner like this:
+
+  function getWinner() {
+    if (winnerIsX()) {
+      return 'x';
+    }
+    if (winnerIsO()) {
+      return 'o';
+    }
+    return null;
+  }
+OK! Now we're getting somewhere. Instead of solving one big problem, we're solving two smaller problems – how do we determine whether X or O won?
+
+Determing if x has won
+
+Let's focus on winnerIsX first.
+
+In TicTacToe, there are three ways that X can win:
+
+All cells in a row contain an x
+All cells in a column contain an x
+All cells in a diagonal contain an x
+Wouldn't it be great if we had functions to determine these too? We could call them winsRowX, winsColumnX, and winsDiagonalX.
+
+In this case, X would win if there were a row victory OR a column victory OR a diagonal victory, so to determine winnerIsX we could write the following:
+
+function winnerIsX() {
+  return winsRowX() || winsColumnX() || winsDiagonalX();
+}
+You can't execute anything yet. Just stick with us – we only have a few more tiny problems to solve!
+
+Winning by Rows
+
+Let's look at winsRowX – what does it actually mean to win a row?
+
+According to our cell key from earlier, there are three cells in a row; the first row is a,b, and c; the second row is d,e, and f; the third row is g,h, and i.
+
+If any of these three sets are all equal to x, then X has won via a row.
+
+Let's dive just one level deeper, with a function to test if any one of the three rows are equal to x (let's call it allThreeX).
+
+function winsRowX() {
+  return allThreeX(cellValue('a'), cellValue('b'), cellValue('c')) ||
+          allThreeX(cellValue('d'), cellValue('e'), cellValue('f')) ||
+          allThreeX(cellValue('g'), cellValue('h'), cellValue('i'));
+}
+function allThreeX(cellOne, cellTwo, cellThree) {
+}
+Winning by Columns and Diagonals
+
+We can also use allThreeX to write functions for winsColumnX and winsDiagonalX. This would give us the following code:
+
+function getWinner() {
+  if (isWinnerX()) {
+    return 'x';
+  }
+  if (isWinnerO()) {
+    return 'o';
+  }
+  return null;
+}
+
+function isWinnerX() {
+  return winsRowX() || winsColumnX() || winsDiagonalX();
+}
+
+function winsRowX() {
+  return allThreeX(cells('a'), cells('b'), cells('c')) ||
+         allThreeX(cells('d'), cells('e'), cells('f')) ||
+         allThreeX(cells('g'), cells('h'), cells('i'));
+}
+
+function winsColumnX() {
+  return allThreeX(cells('a'), cells('d'), cells('g')) ||
+         allThreeX(cells('b'), cells('e'), cells('h')) ||
+         allThreeX(cells('c'), cells('f'), cells('i'));
+}
+
+function winsDiagonalX() {
+  return allThreeX(cells('a'), cells('e'), cells('i')) ||
+         allThreeX(cells('c'), cells('e'), cells('g'));
+}
+
+function allThreeX(cellOne, cellTwo, cellThree) {
+}
+Now that we've broken it into one much smaller problem, our allThreeX function is fairly easy to write!
+
+function allThreeX(cellOne, cellTwo, cellThree) {
+  return (cellOne === 'x') && (cellTwo === 'x') && (cellThree === 'x');
+}
+Excellent! Now, isWinnerX should be able to tell us if X has won.
+
+Determining if o has won
+
+Now, we could go ahead and start writing a function called allThreeO to do the same thing for O as we've done for X. But that seems pretty duplicative.
+
+There's a principle we'll emphasize in this course – one that is so universally agreed upon an that it has a name. The principle is this: if you find yourself writing almost the exact same code in two places, take a moment to figure out how you can reorganize. We often refer to this concept as writing "DRY" code – with "DRY" standing for "Don't Repeat Yourself". In this case, we're considering writing two functions which would be exactly the same, except for that hard-coded value of 'x' vs 'o'. Wouldn't it better if we could make the function allThreeX more general so that it worked for both players?
+
+Let's see what we can do.
+
+function allThree(player, cellOne, cellTwo, cellThree) {
+  return (cellOne === player) && (cellTwo === player) && (cellThree === player);
+}
+Removing the duplicative code
+
+Now allThree can be used to test for x or for o; by getting rid of our hard-coded data, we were able to make this function do double-duty!
+
+Let's do the same thing for all the other functions we wrote:
+
+function getWinner() {
+  if (winnerIs('x')) {
+    return 'x';
+  }
+  if (winnerIs('o')) {
+    return 'o';
+  }
+  return null;
+}
+
+function winnerIs(player) {
+  return winsRow(player) || winsColumn(player) || winsDiagonal(player);
+}
+
+function winsRow(player) {
+  return allThree(player, cells('a'), cells('b'), cells('c')) ||
+         allThree(player, cells('d'), cells('e'), cells('f')) ||
+         allThree(player, cells('g'), cells('h'), cells('i'));
+}
+
+function winsColumn(player) {
+  return allThree(player, cells('a'), cells('d'), cells('g')) ||
+         allThree(player, cells('b'), cells('e'), cells('h')) ||
+         allThree(player, cells('c'), cells('f'), cells('i'));
+}
+
+function winsDiagonal(player) {
+  return allThree(player, cells('a'), cells('e'), cells('i')) ||
+         allThree(player, cells('c'), cells('e'), cells('g'));
+}
+
+function allThree(player, cellOne, cellTwo, cellThree) {
+  return (cellOne === player) && (cellTwo === player) && (cellThree === player);
+}
+If you want, you can play around with this code in this repl.it session, which also contains some dummy code to mock up how cells might work. Try testing each of the different functions with different input values, and see what happens.
+
+Have fun!
