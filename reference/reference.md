@@ -11,6 +11,8 @@ In TicTacToe, there are nine possible values (for every cell on the board):
 | g | h | i |
 Each of these values will start as null, until a user assigns them a new value, either 'o' or 'x'
 
+*** This
+
 To play around with this invisible TicTacToe board, we've provided some code:
 
 function cellValue(key) {
@@ -27,6 +29,9 @@ function cellValue(key) {
     default : return null;
   }
 }
+
+*** This is an associative array
+
 To assign a value (x, o) to any cell on the board, edit the return value for the corresponding case. For example, if you want the board to read:
 
 | null | null |   x  |
@@ -204,5 +209,5 @@ function allThree(player, cellOne, cellTwo, cellThree) {
   return (cellOne === player) && (cellTwo === player) && (cellThree === player);
 }
 If you want, you can play around with this code in this repl.it session, which also contains some dummy code to mock up how cells might work. Try testing each of the different functions with different input values, and see what happens.
-
+http://fundamentals.generalassemb.ly/05_chapter/05_lesson.html
 Have fun!

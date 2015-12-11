@@ -1,0 +1,5 @@
+Create an associative array [a, b etc] for each place on board
+possible values are X,O,null
+
+//switch case statement for key Values
+

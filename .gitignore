@@ -35,3 +35,8 @@ node_modules
 
 # John Kirkley Adds
 .jscsrc
+
+#bower
+/bower.json
+/component.json
+/bower_components
