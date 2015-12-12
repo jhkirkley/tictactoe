@@ -15,7 +15,9 @@ function init() {
   boardMsg("");
   for(var i = 0; i < bplane.length; i++) {
     bplane[i] = "";
-    $(".space").eq(i).html("<p>" + bplane[i] + "</p>");
+    $(".space").map(function() {
+            $(this).p.text("");
+        }).get();
   }
 };
 
