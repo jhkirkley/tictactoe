@@ -1,8 +1,8 @@
-var bplane = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+var bPlane = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 var player1Name = "";
 var player2Name = "";
 var player = "";
-var hasWinner = 0;
+var isWinner = 0;
 var moveCount = 0;
 boardActive = false;
 spaceActive = 0;
@@ -15,10 +15,10 @@ function boardMsg(x){
 
 function init() {
   boardMsg("");
-  hasWinner = 0;
+  isWinner = 0;
   moveCount=0;
-  for(var i = 0; i < bplane.length; i++) {
-    bplane[i] = 0;
+  for(var i = 0; i < bPlane.length; i++) {
+    bPlane[i] = 0;
     $(".space").map(function() {
             $(this).children("p").text("");
         }).get();
@@ -43,21 +43,21 @@ function setPlayer(){
 function checkWinner(n, playerName){
     if(
 
-        (bplane[0]==n && bplane[1]==n && bplane[2]==n) ||
-        (bplane[3]==n && bplane[4]==n && bplane[5]==n) ||
-        (bplane[6]==n && bplane[7]==n && bplane[8]==n) ||
+        (bPlane[0]==n && bPlane[1]==n && bPlane[2]==n) ||
+        (bPlane[3]==n && bPlane[4]==n && bPlane[5]==n) ||
+        (bPlane[6]==n && bPlane[7]==n && bPlane[8]==n) ||
 
-        (bplane[0]==n && bplane[3]==n && bplane[6]==n) ||
-        (bplane[3]==n && bplane[4]==n && bplane[5]==n) ||
-        (bplane[6]==n && bplane[7]==n && bplane[8]==n) ||
+        (bPlane[0]==n && bPlane[3]==n && bPlane[6]==n) ||
+        (bPlane[3]==n && bPlane[4]==n && bPlane[5]==n) ||
+        (bPlane[6]==n && bPlane[7]==n && bPlane[8]==n) ||
 
-        (bplane[0]==n && bplane[4]==n && bplane[8]==n)||
-        (bplane[6]==n && bplane[4]==n && bplane[2]==n)
+        (bPlane[0]==n && bPlane[4]==n && bPlane[8]==n)||
+        (bPlane[6]==n && bPlane[4]==n && bPlane[2]==n)
 
 
         ){
         boardMsg(playerName + " won the game!");
-        hasWinner = 1;
+        isWinner = 1;
         moveCount = 0;
         $('#play').css("display","block")
         $("#play").text("Play Again");
@@ -91,59 +91,36 @@ $("#play").click(function(){
 
 $(".space").click(function (){
 
-    var s = $(this).index();
+    if(player1Name == "" || player2Name == ""){
+        alert("Please set all names.");
+        return;
+    }
+    var space = $(this).index();
 
-    if(bplane[s]!== 0){
+    if(bPlane[space]!==0){
         alert("This position is taken. Please try other position.");
         return;
     }
-/*    else if(checkWinner == 1){
+    if(isWinner == 1){
         alert("Please click play again");
         return;
     }
-*/
-    else if(player == player1Name){
+
+    if(player==player1Name){
         moveCount++;
         $(this).children("p").text("O");
-        bplane[s] = 1;
-        var ifWon = checkWinner(1, player1Name);
-        if(!ifWon){
-            if(moveCount>=9){
-                boardMsg("Match Drawn!");
-                moveCount=0;
-                $("#playButton").text("Play again");
-                hasWinner = 1;
-                return;
-               }
-            else{
-                player = player2Name;
-                $( "#player-one" ).removeClass( "active-player" );
-                $( "#player-two" ).addClass( "active-player" );
-                boardMsg(player2Name + "'s turn now!");
-            }
-            return;
-        }
-        else{
-            return;
-        }
-    }
-    else if(player == player2Name){
-        moveCount++;
-        $(this).children("p").text("X");
-        bplane[s] = 2;
-        var ifWon = checkWinner(2, player2Name);
+        bPlane[space] = 1;
+        var ifWon = checkWinner(1,player1Name);
         if(!ifWon){
             if(moveCount>=9){
                 boardMsg("Match Drawn!");
                 moveCount=0;
                 $("#play").text("Play again");
-                hasWinner=1;
+                isWinner=1;
                 return;
             }else{
-                player = player1Name;
-                ( "#player-two" ).removeClass( "active-player" );
-                $( "#player-one" ).addClass( "active-player" );
-                boardMsg(player1Name + "'s turn now!");
+                player = player2Name;
+                boardMsg(player2Name+"'s turn now!");
             }
             return;
         }
@@ -151,8 +128,29 @@ $(".space").click(function (){
             return;
         }
     }
-
-}); //end space click
+    else if(player==player2Name){
+        moveCount++;
+        $(this).children("p").text("X");
+        grid[row][col] = 2;
+        var ifWon = checkWinner(2,player2Name);
+        if(!ifWon){
+            if(moveCount>=9){
+                boardMsg("Match Drawn!");
+                moveCount=0;
+                $("#play").text("Play again");
+                isWinner=1;
+                return;
+            }else{
+                player = player1Name;
+                boardMsg(player1Name+"'s turn now!");
+            }
+            return;
+        }
+        else{
+            return;
+        }
+    }
+});
 
 
 });
