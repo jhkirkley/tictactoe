@@ -3,6 +3,8 @@ var player1Name = "";
 var player2Name = "";
 var player = "";
 var turn = "";
+var hasWinner = 0;
+var moveCount = 0;
 //status = parseInt(status);
 $(document).ready(function () {
 
@@ -13,10 +15,12 @@ function boardMsg(x){
 function init() {
   turn = "";
   boardMsg("");
+  hasWinner = 0;
+  moveCount=0;
   for(var i = 0; i < bplane.length; i++) {
     bplane[i] = "";
     $(".space").map(function() {
-            $(this).p.text("");
+            $(this).children("p").text("");
         }).get();
   }
 };
@@ -36,6 +40,31 @@ function setTurn(){
         }
 }
 
+function checkWinner(n,playerName){
+    if(
+
+        (grid[0]==n && grid[1]==n && grid[2]==n) ||
+        (grid[3]==n && grid[4]==n && grid[5]==n) ||
+        (grid[6]==n && grid[7]==n && grid[8]==n) ||
+
+        (grid[0]==n && grid[3]==n && grid[6]==n) ||
+        (grid[3]==n && grid[4]==n && grid[5]==n) ||
+        (grid[6]==n && grid[7]==n && grid[8]==n) ||
+
+        (grid[0]==n && grid[4]==n && grid[8]==n)||
+        (grid[6]==n && grid[4]==n && grid[2]==n)
+
+
+        ){
+        boardMsg(playerName+" won the game!");
+        hasWinner = 1;
+        moveCount=0;
+        $('#play').css("display","block")
+        $("#play").text("Play again");
+        return true;
+    }
+    return false;
+}
 
 
 $("#play").click(function(){
@@ -49,7 +78,10 @@ $("#play").click(function(){
         boardMsg("Please enter all of the player names");
 
     }
-    else { setTurn()}
+    else {
+      setTurn();
+      $('#play').css("display","none")
+    }
 });
 
 $(".space").click(function() {
