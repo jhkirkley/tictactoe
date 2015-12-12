@@ -1,5 +1,14 @@
+html {
+
+  margin: 0;
+  height: 100%;
+  overflow: hidden
+}
 body {
   width: 100%;
+  margin: 0;
+  height: 100%;
+  overflow: hidden
 }
 
 header {
@@ -15,7 +24,8 @@ header {
   font-size: 48px;
 }
 #game {
-  width: 80%;
+  width: 60%;
+  height: 60%;
   margin-top: 10%;
   margin-right: auto;
   margin-bottom: 10%;
@@ -23,19 +33,19 @@ header {
 
 }
 
-#acontainer {
+#bcontainer {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-bottom: 5%;
 
 }
 
-#bcontainer {
+#acontainer {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
@@ -51,7 +61,7 @@ header {
   display: flex;
   -webkit-flex-direction: row;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 5%;
 
 }
@@ -84,4 +94,54 @@ header {
 p {
   padding-top: 30%;
   padding-bottom: 30%;
+}
+#bottom {
+display: -webkit-flex;
+display: flex;
+-webkit-flex-direction: row;
+flex-direction: row;
+justify-content: space-around;
+width: 100%;
+height: 20%;
+font-size: 24px;
+background-color: black;
+color: white;
+
+
+}
+#player-one {
+justify-content:flex-start;
+text-align: center;
+vertical-align: center;
+height: 60%;
+width:40%;
+font-size: 24px;
+background-color: grey;
+margin-top: 2%;
+
+
+}
+
+#player-two {
+justify-content:flex-end;
+text-align: center;
+vertical-align: center;
+width: 40%;
+height:60%;
+font-size: 24px;
+background-color: grey;
+margin-top: 2%;
+
+}
+
+.active-player {
+border-style: solid;
+border-width: 5px;
+border-color: red;
+
+}
+
+footer {
+  width: 100%;
+  height:10%;
 }
