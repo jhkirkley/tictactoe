@@ -1,5 +1,30 @@
 Create an associative array [a, b etc] for each place on board
 possible values are X,O,null
 
-//switch case statement for key Values
+  //switch case statement for key Values
+
+ get winner if (all possible combinations of winning)
+
+create turns
+randomize
+turn determines player
+
+if wiiner player
+
+if winner computer
+
+else
+  click event changes value of key
+
+    ??how do you tanslate click to key
+    ??can you click div
+  Click event
+    ??change display with click
+    ??change array
+
+    get winner function
+
+Quit function
+
+
 
