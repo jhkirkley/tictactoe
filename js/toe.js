@@ -120,6 +120,8 @@ $(".space").click(function (){
                 return;
             }else{
                 player = player2Name;
+                $( "#player-two" ).addClass( "active-player" );
+                $( "#player-one" ).removeClass( "active-player" );
                 boardMsg(player2Name+"'s turn now!");
             }
             return;
@@ -131,7 +133,7 @@ $(".space").click(function (){
     else if(player==player2Name){
         moveCount++;
         $(this).children("p").text("X");
-        grid[row][col] = 2;
+        bPlane[space] = 2;
         var ifWon = checkWinner(2,player2Name);
         if(!ifWon){
             if(moveCount>=9){
@@ -142,6 +144,8 @@ $(".space").click(function (){
                 return;
             }else{
                 player = player1Name;
+                $( "#player-one" ).addClass( "active-player" );
+                $( "#player-two" ).removeClass( "active-player" );
                 boardMsg(player1Name+"'s turn now!");
             }
             return;
