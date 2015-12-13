@@ -36,7 +36,7 @@ function setPlayer(){
     }
     else {player = player2Name;
           $( "#player-two" ).addClass( "active-player" );
-          boardMsg(player1Name+"'s turn now!");
+          boardMsg(player2Name+"'s turn now!");
         }
 }
 
