@@ -1,3 +1,6 @@
+//Style
+
+//function
 var bPlane = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 var player1Name = "";
 var player2Name = "";
@@ -155,6 +158,10 @@ $(".space").click(function (){
         }
     }
 });
+
+//style
+
+
 
 
 });

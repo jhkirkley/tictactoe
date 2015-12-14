@@ -25,14 +25,10 @@ header {
   left: 5%;
   top: 5%;
 }
-#play {
-  background-color: red;
-  color: white;
-  font-size: 48px;
-}
+
 #game {
-  width: 60%;
-  height: 60%;
+  width: 50%;
+  height: 50%;
   margin-top: 10%;
   margin-right: auto;
   margin-bottom: 10%;
@@ -101,7 +97,18 @@ p {
   padding-top: 30%;
   padding-bottom: 30%;
 }
-#bottom {
+#board{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #CC3333;
+  font-size: 30px;
+  font-family: helvetica;
+  color: white;
+  margin-top: 10px;
+}
+
+#player {
 display: -webkit-flex;
 display: flex;
 -webkit-flex-direction: row;
@@ -147,17 +154,15 @@ border-color: red;
 
 }
 
-footer {
-  width: 100%;
-  height:10%;
-}
-#board{
-  width: 100%;
-  height: 100%;
+#action {
   text-align: center;
-  background-color: green;
-  font-size: 30px;
-  font-family: helvetica;
-  color: white;
-  margin-top: 10px;
 }
+
+#play {
+  background-color: #ff6600;
+  color: white;
+  font-size: 18px;
+  margin: 10px;
+}
+
+
