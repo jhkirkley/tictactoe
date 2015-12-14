@@ -1,5 +1,4 @@
 html {
-
   margin: 0;
   height: 100%;
   overflow: hidden
@@ -8,16 +7,24 @@ body {
   width: 100%;
   margin: 0;
   height: 100%;
-  overflow: hidden
+  overflow: hidden;
+  background-color: #34495E;
+  ;
 }
 
+/*
 header {
 
   text-align: center;
   padding-top: 1%;
   padding-bottom: 1%;
 }
-
+*/
+#logo {
+  position: absolute;
+  left: 5%;
+  top: 5%;
+}
 #play {
   background-color: red;
   color: white;
@@ -41,7 +48,6 @@ header {
   justify-content: space-around;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-bottom: 5%;
 
 }
 
@@ -69,7 +75,7 @@ header {
 .space {
   width: 30%;
   height: 30%;
-  background-color: blue;
+  background-color: #446CB3;
   color: white;
   margin: 5px;
   text-align: center;
