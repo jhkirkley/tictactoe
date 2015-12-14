@@ -49,17 +49,16 @@ $(document).ready(function() {
 
     function checkWinner(n, playerName) {
 
-/*        function wins(playerName) {
-    playerName.score++;
+  function wins(x) {
     if (playerName == playerOne.name) {
         playerOne.score++;
         $("#p-one-score").children("p").text(playerOne.score);
     } else if (playerName == playerTwo.name) {
         playerTwo.score++;
-        $("#p-two-score").children("p").text(playerOne.score);
+        $("#p-two-score").children("p").text(playerTwo.score);
     }
 }
-*/
+
         if (
 
             (bPlane[0] == n && bPlane[1] == n && bPlane[2] == n) ||
@@ -75,6 +74,7 @@ $(document).ready(function() {
 
 
         ) {
+            wins(playerName);
             boardMsg(playerName + " won the game!");
             isWinner = 1;
             moveCount = 0;
