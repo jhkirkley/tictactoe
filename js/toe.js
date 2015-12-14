@@ -22,6 +22,8 @@ $(document).ready(function() {
         boardMsg("");
         isWinner = 0;
         moveCount = 0;
+        $("#player-one").removeClass("active-player");
+        $("#player-two").removeClass("active-player");
         for (var i = 0; i < bPlane.length; i++) {
             bPlane[i] = 0;
             $(".space").map(function() {
