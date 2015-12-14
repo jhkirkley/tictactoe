@@ -46,6 +46,18 @@ $(document).ready(function() {
     }
 
     function checkWinner(n, playerName) {
+
+/*        function wins(playerName) {
+    playerName.score++;
+    if (playerName == playerOne.name) {
+        playerOne.score++;
+        $("#p-one-score").children("p").text(playerOne.score);
+    } else if (playerName == playerTwo.name) {
+        playerTwo.score++;
+        $("#p-two-score").children("p").text(playerOne.score);
+    }
+}
+*/
         if (
 
             (bPlane[0] == n && bPlane[1] == n && bPlane[2] == n) ||
@@ -78,8 +90,10 @@ $(document).ready(function() {
 
         playerOne.name = $("#player-one-input").val();
         playerOne.mark =  $("#player-one-mark").val();
+        playerOne.score = 0; $("#p-one-score").children("p").text(playerOne.score);
         playerTwo.name = $("#player-two-input").val();
         playerTwo.mark =  $("#player-two-mark").val();
+        playerTwo.score = 0; $("#p-two-score").children("p").text(playerTwo.score);
 
         if (playerOne.name == "" || playerTwo.name == "") {
             boardMsg("Please enter all of the player names");
