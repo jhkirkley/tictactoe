@@ -14,7 +14,8 @@ playerTwo.score = 0;
 //status = parseInt(status);
 $(document).ready(function() {
 
-    //var playerOne = new Player('john', 'x');
+    $("#p-one-score").children("p").text(playerOne.score);
+    $("#p-two-score").children("p").text(playerTwo.score);
 
     function boardMsg(x) {
         return $("#board").text(x);
@@ -140,6 +141,7 @@ $(document).ready(function() {
                     boardMsg("Match Drawn!");
                     moveCount = 0;
                     $("#play").text("Play again");
+                    $('#play').css("display", "inline");
                     isWinner = 1;
                     return;
                 } else {
@@ -162,6 +164,7 @@ $(document).ready(function() {
                     boardMsg("Match Drawn!");
                     moveCount = 0;
                     $("#play").text("Play again");
+                    $('#play').css("display", "inline");
                     isWinner = 1;
                     return;
                 } else {
