@@ -66,9 +66,9 @@ $(document).ready(function() {
      boardMsg(playerName + " won the game!");
      isWinner = 1;
      moveCount = 0;
-     $( ".space:eq( x )" ).css( "background-color", "#DCC6E0" );
-     $( ".space:eq( y )" ).css( "background-color", "#DCC6E0" );
-     $( ".space:eq( z )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( x )" ).css( "background-color", "#C5EFF7" );
+     $( ".space:eq( y )" ).css( "background-color", "#C5EFF7" );
+     $( ".space:eq( z )" ).css( "background-color", "#C5EFF7" );
      $('#play').css("display", "inline")
      $("#play").text("Play Again");
      return true;
@@ -79,9 +79,9 @@ $(document).ready(function() {
      boardMsg(playerName + " won the game!");
      isWinner = 1;
      moveCount = 0;
-     $( ".space:eq( 0 )" ).css( "background-color", "#DCC6E0" );
-     $( ".space:eq( 1 )" ).css( "background-color", "#DCC6E0" );
-     $( ".space:eq( 2 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 0 )" ).css( "background-color", "#C5EFF7" );
+     $( ".space:eq( 1 )" ).css( "background-color", "#C5EFF7" );
+     $( ".space:eq( 2 )" ).css( "background-color", "#C5EFF7" );
      $('#play').css("display", "inline")
      $("#play").text("Play Again");
      return true;
@@ -91,9 +91,9 @@ $(document).ready(function() {
      boardMsg(playerName + " won the game!");
      isWinner = 1;
      moveCount = 0;
-     $( ".space:eq( 3 )" ).css( "background-color", "#DCC6E0" );
-     $( ".space:eq( 4 )" ).css( "background-color", "#DCC6E0" );
-     $( ".space:eq( 5 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 3 )" ).css( "background-color", "#C5EFF7" );
+     $( ".space:eq( 4 )" ).css( "background-color", "#C5EFF7" );
+     $( ".space:eq( 5 )" ).css( "background-color", "#C5EFF7" );
      $('#play').css("display", "inline")
      $("#play").text("Play Again");
      return true;
@@ -103,9 +103,9 @@ $(document).ready(function() {
      boardMsg(playerName + " won the game!");
      isWinner = 1;
      moveCount = 0;
-     $( ".space:eq( 6 )" ).css( "background-color", "#DCC6E0" );
-     $( ".space:eq( 7 )" ).css( "background-color", "#DCC6E0" );
-     $( ".space:eq( 8 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 6 )" ).css( "background-color", "#C5EFF7" );
+     $( ".space:eq( 7 )" ).css( "background-color", "#C5EFF7" );
+     $( ".space:eq( 8 )" ).css( "background-color", "#C5EFF7" );
      $('#play').css("display", "inline")
      $("#play").text("Play Again");
      return true;
@@ -116,9 +116,9 @@ $(document).ready(function() {
      boardMsg(playerName + " won the game!");
      isWinner = 1;
      moveCount = 0;
-     $( ".space:eq( 0 )" ).css( "background-color", "#DCC6E0" );
-     $( ".space:eq( 3 )" ).css( "background-color", "#DCC6E0" );
-     $( ".space:eq( 6 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 0 )" ).css( "background-color", "#C5EFF7" );
+     $( ".space:eq( 3 )" ).css( "background-color", "#C5EFF7" );
+     $( ".space:eq( 6 )" ).css( "background-color", "#C5EFF7" );
      $('#play').css("display", "inline")
      $("#play").text("Play Again");
      return true;
@@ -128,9 +128,9 @@ $(document).ready(function() {
      boardMsg(playerName + " won the game!");
      isWinner = 1;
      moveCount = 0;
-     $( ".space:eq( 1 )" ).css( "background-color", "#DCC6E0" );
-     $( ".space:eq( 4 )" ).css( "background-color", "#DCC6E0" );
-     $( ".space:eq( 7 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 1 )" ).css( "background-color", "#C5EFF7" );
+     $( ".space:eq( 4 )" ).css( "background-color", "#C5EFF7" );
+     $( ".space:eq( 7 )" ).css( "background-color", "#C5EFF7" );
      $('#play').css("display", "inline")
      $("#play").text("Play Again");
      return true;
@@ -140,9 +140,9 @@ $(document).ready(function() {
      boardMsg(playerName + " won the game!");
      isWinner = 1;
      moveCount = 0;
-     $( ".space:eq( 2 )" ).css( "background-color", "#DCC6E0" );
-     $( ".space:eq( 5 )" ).css( "background-color", "#DCC6E0" );
-     $( ".space:eq( 8 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 2 )" ).css( "background-color", "#C5EFF7" );
+     $( ".space:eq( 5 )" ).css( "background-color", "#C5EFF7" );
+     $( ".space:eq( 8 )" ).css( "background-color", "#C5EFF7" );
      $('#play').css("display", "inline")
      $("#play").text("Play Again");
      return true;
@@ -153,9 +153,9 @@ $(document).ready(function() {
      boardMsg(playerName + " won the game!");
      isWinner = 1;
      moveCount = 0;
-     $( ".space:eq( 0 )" ).css( "background-color", "#DCC6E0" );
-     $( ".space:eq( 4 )" ).css( "background-color", "#DCC6E0" );
-     $( ".space:eq( 8 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 0 )" ).css( "background-color", "#C5EFF7" );
+     $( ".space:eq( 4 )" ).css( "background-color", "#C5EFF7" );
+     $( ".space:eq( 8 )" ).css( "background-color", "#C5EFF7" );
      $('#play').css("display", "inline")
      $("#play").text("Play Again");
      return true;
@@ -165,9 +165,9 @@ $(document).ready(function() {
      boardMsg(playerName + " won the game!");
      isWinner = 1;
      moveCount = 0;
-     $( ".space:eq( 6 )" ).css( "background-color", "#DCC6E0" );
-     $( ".space:eq( 4 )" ).css( "background-color", "#DCC6E0" );
-     $( ".space:eq( 2 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 6 )" ).css( "background-color", "#C5EFF7" );
+     $( ".space:eq( 4 )" ).css( "background-color", "#C5EFF7" );
+     $( ".space:eq( 2 )" ).css( "background-color", "#C5EFF7" );
      $('#play').css("display", "inline")
      $("#play").text("Play Again");
      return true;
