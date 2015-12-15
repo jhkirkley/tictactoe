@@ -7,7 +7,9 @@ boardActive = false;
 spaceActive = 0;
 var turn = "";
 var playerOne = new Object();
+playerOne.score = 0;
 var playerTwo = new Object();
+playerTwo.score = 0;
 
 //status = parseInt(status);
 $(document).ready(function() {
@@ -39,11 +41,11 @@ $(document).ready(function() {
         if (status > 50) {
             turn = playerOne.name;
             $("#player-one").addClass("active-player");
-            boardMsg(playerOne.name + "'s turn now!");
+            boardMsg(playerOne.name + "'s turn");
         } else {
             turn = playerTwo.name;
             $("#player-two").addClass("active-player");
-            boardMsg(playerTwo.name + "'s turn now!");
+            boardMsg(playerTwo.name + "'s turn");
         }
     }
 
@@ -78,7 +80,7 @@ $(document).ready(function() {
             boardMsg(playerName + " won the game!");
             isWinner = 1;
             moveCount = 0;
-            $('#play').css("display", "block")
+            $('#play').css("display", "inline")
             $("#play").text("Play Again");
             return true;
         }
@@ -92,10 +94,10 @@ $(document).ready(function() {
 
         playerOne.name = $("#player-one-input").val();
         playerOne.mark =  $("#player-one-mark").val();
-        playerOne.score = 0; $("#p-one-score").children("p").text(playerOne.score);
+        $("#p-one-score").children("p").text(playerOne.score);
         playerTwo.name = $("#player-two-input").val();
         playerTwo.mark =  $("#player-two-mark").val();
-        playerTwo.score = 0; $("#p-two-score").children("p").text(playerTwo.score);
+        $("#p-two-score").children("p").text(playerTwo.score);
 
         if (playerOne.name == "" || playerTwo.name == "") {
             boardMsg("Please enter all of the player names");
@@ -124,7 +126,7 @@ $(document).ready(function() {
             return;
         }
         if (isWinner == 1) {
-            alert("Please click play again");
+            $(this).addClass('shake');
             return;
         }
 
