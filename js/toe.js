@@ -61,31 +61,46 @@ $(document).ready(function() {
         $("#p-two-score").children("p").text(playerTwo.score);
     }
 }
+    function havaWinner(x, y, z) {
+     wins(playerName);
+     boardMsg(playerName + " won the game!");
+     isWinner = 1;
+     moveCount = 0;
+     $( "space:eq( x )" ).css( "color", "red" );
+     $( "space:eq( y )" ).css( "color", "red" );
+     $( "space:eq( z )" ).css( "color", "red" );
+     $('#play').css("display", "inline")
+     $("#play").text("Play Again");
+     return true;
+ }
 
-        if (
+ if (bPlane[0] == n && bPlane[1] == n && bPlane[2] == n) {
+     havaWinner(0, 1, 2)
+ }
+ if (bPlane[3] == n && bPlane[4] == n && bPlane[5] == n) {
+     havaWinner(0, 1, 2)
+ }
+ if (bPlane[6] == n && bPlane[7] == n && bPlane[8] == n) {
+     havaWinner(0, 1, 2)
+ }
 
-            (bPlane[0] == n && bPlane[1] == n && bPlane[2] == n) ||
-            (bPlane[3] == n && bPlane[4] == n && bPlane[5] == n) ||
-            (bPlane[6] == n && bPlane[7] == n && bPlane[8] == n) ||
+ if (bPlane[0] == n && bPlane[3] == n && bPlane[6] == n) {
+     havaWinner(0, 1, 2)
+ }
+ if (bPlane[1] == n && bPlane[4] == n && bPlane[7] == n) {
+     havaWinner(0, 1, 2)
+ }
+ if (bPlane[2] == n && bPlane[5] == n && bPlane[8] == n) {
+     havaWinner(0, 1, 2)
+ }
 
-            (bPlane[0] == n && bPlane[3] == n && bPlane[6] == n) ||
-            (bPlane[1] == n && bPlane[4] == n && bPlane[7] == n) ||
-            (bPlane[2] == n && bPlane[5] == n && bPlane[8] == n) ||
+ if (bPlane[0] == n && bPlane[4] == n && bPlane[8] == n) {
+     havaWinner(0, 1, 2)
+ }
+ if (bPlane[6] == n && bPlane[4] == n && bPlane[2] == n) {
+     havaWinner(0, 1, 2)
+ } else return false;
 
-            (bPlane[0] == n && bPlane[4] == n && bPlane[8] == n) ||
-            (bPlane[6] == n && bPlane[4] == n && bPlane[2] == n)
-
-
-        ) {
-            wins(playerName);
-            boardMsg(playerName + " won the game!");
-            isWinner = 1;
-            moveCount = 0;
-            $('#play').css("display", "inline")
-            $("#play").text("Play Again");
-            return true;
-        }
-        return false;
     }
 
 
