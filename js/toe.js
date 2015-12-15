@@ -66,39 +66,111 @@ $(document).ready(function() {
      boardMsg(playerName + " won the game!");
      isWinner = 1;
      moveCount = 0;
-     $( "space:eq( x )" ).css( "color", "red" );
-     $( "space:eq( y )" ).css( "color", "red" );
-     $( "space:eq( z )" ).css( "color", "red" );
+     $( ".space:eq( x )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( y )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( z )" ).css( "background-color", "#DCC6E0" );
      $('#play').css("display", "inline")
      $("#play").text("Play Again");
      return true;
  }
 
  if (bPlane[0] == n && bPlane[1] == n && bPlane[2] == n) {
-     havaWinner(0, 1, 2)
+    wins(playerName);
+     boardMsg(playerName + " won the game!");
+     isWinner = 1;
+     moveCount = 0;
+     $( ".space:eq( 0 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 1 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 2 )" ).css( "background-color", "#DCC6E0" );
+     $('#play').css("display", "inline")
+     $("#play").text("Play Again");
+     return true;
  }
  if (bPlane[3] == n && bPlane[4] == n && bPlane[5] == n) {
-     havaWinner(0, 1, 2)
+     wins(playerName);
+     boardMsg(playerName + " won the game!");
+     isWinner = 1;
+     moveCount = 0;
+     $( ".space:eq( 3 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 4 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 5 )" ).css( "background-color", "#DCC6E0" );
+     $('#play').css("display", "inline")
+     $("#play").text("Play Again");
+     return true;
  }
  if (bPlane[6] == n && bPlane[7] == n && bPlane[8] == n) {
-     havaWinner(0, 1, 2)
+     wins(playerName);
+     boardMsg(playerName + " won the game!");
+     isWinner = 1;
+     moveCount = 0;
+     $( ".space:eq( 6 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 7 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 8 )" ).css( "background-color", "#DCC6E0" );
+     $('#play').css("display", "inline")
+     $("#play").text("Play Again");
+     return true;
  }
 
  if (bPlane[0] == n && bPlane[3] == n && bPlane[6] == n) {
-     havaWinner(0, 1, 2)
+          wins(playerName);
+     boardMsg(playerName + " won the game!");
+     isWinner = 1;
+     moveCount = 0;
+     $( ".space:eq( 0 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 3 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 6 )" ).css( "background-color", "#DCC6E0" );
+     $('#play').css("display", "inline")
+     $("#play").text("Play Again");
+     return true;
  }
  if (bPlane[1] == n && bPlane[4] == n && bPlane[7] == n) {
-     havaWinner(0, 1, 2)
+          wins(playerName);
+     boardMsg(playerName + " won the game!");
+     isWinner = 1;
+     moveCount = 0;
+     $( ".space:eq( 1 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 4 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 7 )" ).css( "background-color", "#DCC6E0" );
+     $('#play').css("display", "inline")
+     $("#play").text("Play Again");
+     return true;
  }
  if (bPlane[2] == n && bPlane[5] == n && bPlane[8] == n) {
-     havaWinner(0, 1, 2)
+          wins(playerName);
+     boardMsg(playerName + " won the game!");
+     isWinner = 1;
+     moveCount = 0;
+     $( ".space:eq( 2 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 5 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 8 )" ).css( "background-color", "#DCC6E0" );
+     $('#play').css("display", "inline")
+     $("#play").text("Play Again");
+     return true;
  }
 
  if (bPlane[0] == n && bPlane[4] == n && bPlane[8] == n) {
-     havaWinner(0, 1, 2)
+          wins(playerName);
+     boardMsg(playerName + " won the game!");
+     isWinner = 1;
+     moveCount = 0;
+     $( ".space:eq( 0 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 4 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 8 )" ).css( "background-color", "#DCC6E0" );
+     $('#play').css("display", "inline")
+     $("#play").text("Play Again");
+     return true;
  }
  if (bPlane[6] == n && bPlane[4] == n && bPlane[2] == n) {
-     havaWinner(0, 1, 2)
+    wins(playerName);
+     boardMsg(playerName + " won the game!");
+     isWinner = 1;
+     moveCount = 0;
+     $( ".space:eq( 6 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 4 )" ).css( "background-color", "#DCC6E0" );
+     $( ".space:eq( 2 )" ).css( "background-color", "#DCC6E0" );
+     $('#play').css("display", "inline")
+     $("#play").text("Play Again");
+     return true;
  } else return false;
 
     }
