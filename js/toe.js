@@ -51,10 +51,10 @@ $(document).ready(function() {
 
   function wins(x) {
     if (playerName == playerOne.name) {
-        playerOne.score++;
+        playerOne.score = playerOne.score + 1;
         $("#p-one-score").children("p").text(playerOne.score);
     } else if (playerName == playerTwo.name) {
-        playerTwo.score++;
+        playerTwo.score = playerTwo.score + 1;
         $("#p-two-score").children("p").text(playerTwo.score);
     }
 }
