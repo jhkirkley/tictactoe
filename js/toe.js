@@ -66,8 +66,8 @@ $(document).ready(function() {
             (bPlane[6] == n && bPlane[7] == n && bPlane[8] == n) ||
 
             (bPlane[0] == n && bPlane[3] == n && bPlane[6] == n) ||
-            (bPlane[3] == n && bPlane[4] == n && bPlane[5] == n) ||
-            (bPlane[6] == n && bPlane[7] == n && bPlane[8] == n) ||
+            (bPlane[1] == n && bPlane[4] == n && bPlane[7] == n) ||
+            (bPlane[2] == n && bPlane[5] == n && bPlane[8] == n) ||
 
             (bPlane[0] == n && bPlane[4] == n && bPlane[8] == n) ||
             (bPlane[6] == n && bPlane[4] == n && bPlane[2] == n)
@@ -120,7 +120,7 @@ $(document).ready(function() {
         var space = $(this).index();
 
         if (bPlane[space] !== 0) {
-            alert("This position is taken. Please try other position.");
+            $(this).addClass('shake');
             return;
         }
         if (isWinner == 1) {
@@ -144,7 +144,7 @@ $(document).ready(function() {
                     turn = playerTwo.name;
                     $("#player-two").addClass("active-player");
                     $("#player-one").removeClass("active-player");
-                    boardMsg(playerTwo.name + "'s turn now!");
+                    boardMsg(playerTwo.name + "'s turn");
                 }
                 return;
             } else {
@@ -166,7 +166,7 @@ $(document).ready(function() {
                     turn = playerOne.name;
                     $("#player-one").addClass("active-player");
                     $("#player-two").removeClass("active-player");
-                    boardMsg(playerOne.name + "'s turn now!");
+                    boardMsg(playerOne.name + "'s turn");
                 }
                 return;
             } else {
