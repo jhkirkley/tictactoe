@@ -21,6 +21,14 @@ $(document).ready(function() {
         return $("#board").text(x);
     };
 
+    $("#glasses").click(function() {
+
+        $("#acontainer").toggleClass("hidden");
+        $("#ccontainer").toggleClass("hidden");
+
+    });
+    //style
+
     function setBoard() {
         boardMsg("");
         isWinner = 0;
@@ -277,10 +285,5 @@ $(document).ready(function() {
             }
         }
     });
-
-    //style
-
-
-
 
 });

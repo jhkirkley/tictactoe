@@ -89,6 +89,7 @@ header {
 }
 
 #ccontainer {
+  display: none;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
@@ -107,6 +108,12 @@ header {
     transform: rotatey(60deg);
   float: left;
 
+}
+
+.hidden {
+  display: block;
+  display: none;
+  background-color: red;
 }
 
 .space {
