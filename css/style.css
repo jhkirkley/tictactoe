@@ -79,7 +79,13 @@ header {
   background-color: #446CB3;
   color: white;
   position: relative;
+  vertical-align: middle;
+  text-align: center;
 
+}
+.mark {
+  vertical-align: middle;
+  height: 50%;
 }
 .shake {
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;

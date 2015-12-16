@@ -30,7 +30,10 @@ $(document).ready(function() {
         for (var i = 0; i < bPlane.length; i++) {
             bPlane[i] = 0;
             $(".space").map(function() {
-                $(this).children("p").text("");
+                $(this).html("");
+            }).get();
+            $(".space").map(function() {
+                $(this).css("background-color", "#446CB3");
             }).get();
         }
     };
@@ -182,13 +185,21 @@ $(document).ready(function() {
 
         playerOne.name = $("#player-one-input").val();
         playerOne.mark =  $("#player-one-mark").val();
+        //if (playerOne.mark == "X") {
+        //} else if (playerOne.mark == "X") {
+         //   playerOne.image = "<img src="img/O.png"/>"
+        //}
+        playerOne.image = playerOne.mark == "X" ? '<img src="img/X.png" alt="X" />': '<img src="img/O.png" alt="O" />';
+
         $("#p-one-score").children("p").text(playerOne.score);
         playerTwo.name = $("#player-two-input").val();
-        playerTwo.mark =  $("#player-two-mark").val();
+        //playerTwo.mark =  $("#player-two-mark").val();
+        playerTwo.mark = playerOne.mark == "X" ? "O": "X";
+        playerTwo.image = playerTwo.mark == "X" ? '<img src="img/X.png" alt="X" />': '<img src="img/O.png" alt="O" />';
         $("#p-two-score").children("p").text(playerTwo.score);
 
         if (playerOne.name == "" || playerTwo.name == "") {
-            boardMsg("Please enter all of the player names");
+           boardMsg("Please enter all of the player names");
 
         } else {
             setPlayer();
@@ -220,7 +231,7 @@ $(document).ready(function() {
 
         if (turn == playerOne.name) {
             moveCount++;
-            $(this).children("p").text(playerOne.mark);
+            $(this).append(playerOne.image);
             bPlane[space] = 1;
             var ifWon = checkWinner(1, playerOne.name);
             if (!ifWon) {
@@ -243,7 +254,7 @@ $(document).ready(function() {
             }
         } else if (turn == playerTwo.name) {
             moveCount++;
-            $(this).children("p").text(playerTwo.mark);
+            $(this).append(playerTwo.image);
             bPlane[space] = 2;
             var ifWon = checkWinner(2, playerTwo.name);
             if (!ifWon) {
