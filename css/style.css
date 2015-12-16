@@ -22,17 +22,27 @@ header {
 */
 #logo {
   position: absolute;
-  left: 5%;
+  left: 2%;
   top: 5%;
 }
 
+#glasses {
+  position: absolute;
+  right: 2%;
+  top: 5%;
+  width: 5%;
+}
+
 #game {
-  width: 50%;
+  width: 80%;
   height: 50%;
   margin-top: 10%;
   margin-right: auto;
   margin-bottom: 10%;
   margin-left: auto;
+  text-align: center;
+     -webkit-perspective: 75em; /* Chrome, Safari, Opera  */
+    perspective: 75em;
 
 }
 
@@ -45,21 +55,36 @@ header {
   align-items: center;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  width: 100%;
-  height: 100%;
+  width: 30%;
+  height: 80%;
   margin-top: 5%;
   margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
+    -webkit-transform: rotatey(60deg); /* Chrome, Safari, Opera  */
+    transform: rotatey(60deg);
+  float: left;
 
 }
 
 #acontainer {
-  display: -webkit-flex;
+   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 30%;
+  height: 80%;
   margin-top: 5%;
   margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
+    -webkit-transform: rotatey(60deg); /* Chrome, Safari, Opera  */
+    transform: rotatey(60deg);
+  float: left;
 
 }
 
@@ -68,8 +93,19 @@ header {
   display: flex;
   -webkit-flex-direction: row;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 30%;
+  height: 80%;
   margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
+    -webkit-transform: rotatey(60deg); /* Chrome, Safari, Opera  */
+    transform: rotatey(60deg);
+  float: left;
 
 }
 
@@ -137,8 +173,9 @@ header {
 
 #control {
   height: 40%;
-  width: 100%;
   background-color: white;
+  margin-bottom: 5%;
+  padding-bottom: 2%
 
 }
 
