@@ -83,7 +83,7 @@ header {
 }
 
 .three {
-    display: none;
+  display: none;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
@@ -106,6 +106,7 @@ header {
 }
 
 .space {
+  position: relative;
   width: 30%;
   height: 30%;
   background-color: #446CB3;
@@ -116,8 +117,10 @@ header {
 
 }
 .mark {
-  vertical-align: middle;
-  height: 50%;
+  position: absolute;
+  height: 70%;
+  left: 20%;
+  top: 15%;
 }
 .shake {
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;

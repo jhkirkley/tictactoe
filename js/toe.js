@@ -205,13 +205,13 @@ $(document).ready(function() {
         //} else if (playerOne.mark == "X") {
          //   playerOne.image = "<img src="img/O.png"/>"
         //}
-        playerOne.image = playerOne.mark == "X" ? '<img src="img/X.png" alt="X" />': '<img src="img/O.png" alt="O" />';
+        playerOne.image = playerOne.mark == "X" ? '<img src="img/X.png" alt="X" class="mark"/>': '<img src="img/O.png" alt="O" class="mark"/>';
 
         $("#p-one-score").children("p").text(playerOne.score);
         playerTwo.name = $("#player-two-input").val();
         //playerTwo.mark =  $("#player-two-mark").val();
         playerTwo.mark = playerOne.mark == "X" ? "O": "X";
-        playerTwo.image = playerTwo.mark == "X" ? '<img src="img/X.png" alt="X" />': '<img src="img/O.png" alt="O" />';
+        playerTwo.image = playerTwo.mark == "X" ? '<img src="img/X.png" alt="X" class="mark"/>': '<img src="img/O.png" alt="O" class="mark"/>';
         $("#p-two-score").children("p").text(playerTwo.score);
 
         if (playerOne.name == "" || playerTwo.name == "") {
