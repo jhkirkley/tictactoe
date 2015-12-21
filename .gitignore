@@ -41,3 +41,6 @@ node_modules
 /component.json
 /reference
 /node_modules
+/build
+/test
+/logs
