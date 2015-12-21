@@ -1,0 +1,23 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "Tic Tac toe in 3D",
+  "main": "index.html",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhkirkley/tictactoe.git"
+  },
+  "author": "John Kirkley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhkirkley/tictactoe/issues"
+  },
+  "homepage": "https://github.com/jhkirkley/tictactoe#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.3"
+  }
+}
