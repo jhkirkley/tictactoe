@@ -28,8 +28,8 @@ header {
 
 #glasses {
   position: absolute;
-  left: 10%;
-  top: 25%;
+  right: 2%;
+  top: 5%;
   width: 5%;
 }
 
@@ -47,22 +47,26 @@ header {
 }
 
 #bcontainer {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 60%;
-  height: 80%;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  margin-left: auto;
-  margin-right: auto;
+
 
 }
+.one {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 60%;
+    height: 80%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .dimesion{
     -webkit-transform: rotatey(60deg);
     transform: rotatey(60deg);
@@ -83,7 +87,6 @@ header {
 }
 
 .three {
-  display: none;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
