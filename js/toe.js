@@ -9,6 +9,10 @@ playerOne.score = 0;
 var playerTwo = {};
 playerTwo.score = 0;
 
+function square(x) {
+  return x * x;
+}
+
 //status = parseInt(status);
 $(document).ready(function() {
 
@@ -33,6 +37,7 @@ $(document).ready(function() {
         $("#acontainer").toggleClass("three");
         $("#ccontainer").toggleClass("three");
     });
+
     //style
 
     function setBoard() {
