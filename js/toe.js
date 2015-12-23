@@ -1,15 +1,17 @@
-//Style
-//function
 var bPlane = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 var isWinner = 0;
 var moveCount = 0;
 boardActive = false;
 spaceActive = 0;
 var turn = "";
-var playerOne = new Object();
+var playerOne = {};
 playerOne.score = 0;
-var playerTwo = new Object();
+var playerTwo = {};
 playerTwo.score = 0;
+
+function square(x) {
+  return x * x;
+}
 
 //status = parseInt(status);
 $(document).ready(function() {
@@ -19,7 +21,7 @@ $(document).ready(function() {
 
     function boardMsg(x) {
         return $("#board").text(x);
-    };
+    }
 
     $("#glasses").click(function() {
 
@@ -35,6 +37,7 @@ $(document).ready(function() {
         $("#acontainer").toggleClass("three");
         $("#ccontainer").toggleClass("three");
     });
+
     //style
 
     function setBoard() {
@@ -52,7 +55,7 @@ $(document).ready(function() {
                 $(this).css("background-color", "#446CB3");
             }).get();
         }
-    };
+    }
 
 
     function setPlayer() {
@@ -72,10 +75,10 @@ $(document).ready(function() {
     function checkWinner(n, playerName) {
 
   function wins(x) {
-    if (playerName == playerOne.name) {
+    if (playerName === playerOne.name) {
         playerOne.score = playerOne.score + 1;
         $("#p-one-score").children("p").text(playerOne.score);
-    } else if (playerName == playerTwo.name) {
+    } else if (playerName === playerTwo.name) {
         playerTwo.score = playerTwo.score + 1;
         $("#p-two-score").children("p").text(playerTwo.score);
     }
@@ -88,12 +91,12 @@ $(document).ready(function() {
      $( ".space:eq( x )" ).css( "background-color", "#C5EFF7" );
      $( ".space:eq( y )" ).css( "background-color", "#C5EFF7" );
      $( ".space:eq( z )" ).css( "background-color", "#C5EFF7" );
-     $('#play').css("display", "inline")
+     $('#play').css("display", "inline");
      $("#play").text("Play Again");
      return true;
  }
 
- if (bPlane[0] == n && bPlane[1] == n && bPlane[2] == n) {
+ if (bPlane[0] === n && bPlane[1] === n && bPlane[2] === n) {
     wins(playerName);
      boardMsg(playerName + " won the game!");
      isWinner = 1;
@@ -101,11 +104,11 @@ $(document).ready(function() {
      $( ".space:eq( 0 )" ).css( "background-color", "#C5EFF7" );
      $( ".space:eq( 1 )" ).css( "background-color", "#C5EFF7" );
      $( ".space:eq( 2 )" ).css( "background-color", "#C5EFF7" );
-     $('#play').css("display", "inline")
+     $('#play').css("display", "inline");
      $("#play").text("Play Again");
      return true;
  }
- if (bPlane[3] == n && bPlane[4] == n && bPlane[5] == n) {
+ if (bPlane[3] === n && bPlane[4] === n && bPlane[5] === n) {
      wins(playerName);
      boardMsg(playerName + " won the game!");
      isWinner = 1;
@@ -113,11 +116,11 @@ $(document).ready(function() {
      $( ".space:eq( 3 )" ).css( "background-color", "#C5EFF7" );
      $( ".space:eq( 4 )" ).css( "background-color", "#C5EFF7" );
      $( ".space:eq( 5 )" ).css( "background-color", "#C5EFF7" );
-     $('#play').css("display", "inline")
+     $('#play').css("display", "inline");
      $("#play").text("Play Again");
      return true;
  }
- if (bPlane[6] == n && bPlane[7] == n && bPlane[8] == n) {
+ if (bPlane[6] === n && bPlane[7] === n && bPlane[8] === n) {
      wins(playerName);
      boardMsg(playerName + " won the game!");
      isWinner = 1;
@@ -125,12 +128,12 @@ $(document).ready(function() {
      $( ".space:eq( 6 )" ).css( "background-color", "#C5EFF7" );
      $( ".space:eq( 7 )" ).css( "background-color", "#C5EFF7" );
      $( ".space:eq( 8 )" ).css( "background-color", "#C5EFF7" );
-     $('#play').css("display", "inline")
+     $('#play').css("display", "inline");
      $("#play").text("Play Again");
      return true;
  }
 
- if (bPlane[0] == n && bPlane[3] == n && bPlane[6] == n) {
+ if (bPlane[0] === n && bPlane[3] === n && bPlane[6] === n) {
           wins(playerName);
      boardMsg(playerName + " won the game!");
      isWinner = 1;
@@ -138,11 +141,11 @@ $(document).ready(function() {
      $( ".space:eq( 0 )" ).css( "background-color", "#C5EFF7" );
      $( ".space:eq( 3 )" ).css( "background-color", "#C5EFF7" );
      $( ".space:eq( 6 )" ).css( "background-color", "#C5EFF7" );
-     $('#play').css("display", "inline")
+     $('#play').css("display", "inline");
      $("#play").text("Play Again");
      return true;
  }
- if (bPlane[1] == n && bPlane[4] == n && bPlane[7] == n) {
+ if (bPlane[1] === n && bPlane[4] === n && bPlane[7] === n) {
           wins(playerName);
      boardMsg(playerName + " won the game!");
      isWinner = 1;
@@ -150,11 +153,11 @@ $(document).ready(function() {
      $( ".space:eq( 1 )" ).css( "background-color", "#C5EFF7" );
      $( ".space:eq( 4 )" ).css( "background-color", "#C5EFF7" );
      $( ".space:eq( 7 )" ).css( "background-color", "#C5EFF7" );
-     $('#play').css("display", "inline")
+     $('#play').css("display", "inline");
      $("#play").text("Play Again");
      return true;
  }
- if (bPlane[2] == n && bPlane[5] == n && bPlane[8] == n) {
+ if (bPlane[2] === n && bPlane[5] === n && bPlane[8] === n) {
           wins(playerName);
      boardMsg(playerName + " won the game!");
      isWinner = 1;
@@ -162,12 +165,12 @@ $(document).ready(function() {
      $( ".space:eq( 2 )" ).css( "background-color", "#C5EFF7" );
      $( ".space:eq( 5 )" ).css( "background-color", "#C5EFF7" );
      $( ".space:eq( 8 )" ).css( "background-color", "#C5EFF7" );
-     $('#play').css("display", "inline")
+     $('#play').css("display", "inline");
      $("#play").text("Play Again");
      return true;
  }
 
- if (bPlane[0] == n && bPlane[4] == n && bPlane[8] == n) {
+ if (bPlane[0] === n && bPlane[4] === n && bPlane[8] === n) {
           wins(playerName);
      boardMsg(playerName + " won the game!");
      isWinner = 1;
@@ -175,11 +178,11 @@ $(document).ready(function() {
      $( ".space:eq( 0 )" ).css( "background-color", "#C5EFF7" );
      $( ".space:eq( 4 )" ).css( "background-color", "#C5EFF7" );
      $( ".space:eq( 8 )" ).css( "background-color", "#C5EFF7" );
-     $('#play').css("display", "inline")
+     $('#play').css("display", "inline");
      $("#play").text("Play Again");
      return true;
  }
- if (bPlane[6] == n && bPlane[4] == n && bPlane[2] == n) {
+ if (bPlane[6] === n && bPlane[4] === n && bPlane[2] === n) {
     wins(playerName);
      boardMsg(playerName + " won the game!");
      isWinner = 1;
@@ -187,10 +190,11 @@ $(document).ready(function() {
      $( ".space:eq( 6 )" ).css( "background-color", "#C5EFF7" );
      $( ".space:eq( 4 )" ).css( "background-color", "#C5EFF7" );
      $( ".space:eq( 2 )" ).css( "background-color", "#C5EFF7" );
-     $('#play').css("display", "inline")
+     $('#play').css("display", "inline");
      $("#play").text("Play Again");
      return true;
- } else return false;
+ }
+  else {return false;}
 
     }
 
@@ -201,25 +205,25 @@ $(document).ready(function() {
 
         playerOne.name = $("#player-one-input").val();
         playerOne.mark =  $("#player-one-mark").val();
-        //if (playerOne.mark == "X") {
-        //} else if (playerOne.mark == "X") {
+        //if (playerOne.mark === "X") {
+        //} else if (playerOne.mark === "X") {
          //   playerOne.image = "<img src="img/O.png"/>"
         //}
-        playerOne.image = playerOne.mark == "X" ? '<img src="img/X.png" alt="X" class="mark"/>': '<img src="img/O.png" alt="O" class="mark"/>';
+        playerOne.image = playerOne.mark === "X" ? '<img src="img/X.png" alt="X" class="mark"/>': '<img src="img/O.png" alt="O" class="mark"/>';
 
         $("#p-one-score").children("p").text(playerOne.score);
         playerTwo.name = $("#player-two-input").val();
         //playerTwo.mark =  $("#player-two-mark").val();
-        playerTwo.mark = playerOne.mark == "X" ? "O": "X";
-        playerTwo.image = playerTwo.mark == "X" ? '<img src="img/X.png" alt="X" class="mark"/>': '<img src="img/O.png" alt="O" class="mark"/>';
+        playerTwo.mark = playerOne.mark === "X" ? "O": "X";
+        playerTwo.image = playerTwo.mark === "X" ? '<img src="img/X.png" alt="X" class="mark"/>': '<img src="img/O.png" alt="O" class="mark"/>';
         $("#p-two-score").children("p").text(playerTwo.score);
 
-        if (playerOne.name == "" || playerTwo.name == "") {
+        if (playerOne.name === "" || playerTwo.name === "") {
            boardMsg("Please enter all of the player names");
 
         } else {
             setPlayer();
-            $('#play').css("display", "none")
+            $('#play').css("display", "none");
             boardActive = true;
         }
     });
@@ -229,8 +233,9 @@ $(document).ready(function() {
     //});
 
     $(".space").click(function() {
+        var ifWon = "";
 
-        if (playerOne.name == "" || playerTwo.name == "") {
+        if (playerOne.name === "" || playerTwo.name === "") {
             alert("Please set all names.");
             return;
         }
@@ -240,16 +245,16 @@ $(document).ready(function() {
             $(this).addClass('shake');
             return;
         }
-        if (isWinner == 1) {
+        if (isWinner === 1) {
             $(this).addClass('shake');
             return;
         }
 
-        if (turn == playerOne.name) {
+        if (turn === playerOne.name) {
             moveCount++;
             $(this).append(playerOne.image);
             bPlane[space] = 1;
-            var ifWon = checkWinner(1, playerOne.name);
+            ifWon = checkWinner(1, playerOne.name);
             if (!ifWon) {
                 if (moveCount >= 9) {
                     boardMsg("Match Drawn!");
@@ -268,11 +273,11 @@ $(document).ready(function() {
             } else {
                 return;
             }
-        } else if (turn == playerTwo.name) {
+        } else if (turn === playerTwo.name) {
             moveCount++;
             $(this).append(playerTwo.image);
             bPlane[space] = 2;
-            var ifWon = checkWinner(2, playerTwo.name);
+            ifWon = checkWinner(2, playerTwo.name);
             if (!ifWon) {
                 if (moveCount >= 9) {
                     boardMsg("Match Drawn!");

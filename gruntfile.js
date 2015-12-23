@@ -1,25 +1,40 @@
-//Code example 04-linting
-//Gruntfile.js
 module.exports = function(grunt) {
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-jscs');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-jasmine');
+    grunt.initConfig({
+        jshint: {
+            all: ['js/**/*js']
+        },
+        watch: {
+        files: ['index.html', 'js/**/*js'],
+        tasks: [],
+        options: {
+        livereload: {
+        host: 'localhost',
+        port: 9000
+        // you can pass in any other options you'd like to the https server, as listed here: http://nodejs.org/api/tls.html#tls_tls_createserver_options_secureconnectionlistener
+              },
+        debounceDelay: 250,
 
-  // Load the plugin that provides the "jshint" task.
-  grunt.loadNpmTasks('grunt-contrib-jshint');
+                  },
+         jasmine: {
+             src: './js/toe.js',
+             options: {
+                 specs: './tests/tests.js'
+             }
+         }
 
-  // Project configuration.
-  grunt.initConfig({
-    jshint: {
-      options: {
-        curly: true,
-        eqeqeq: true
-      },
-      target1: ['Gruntfile.js', 'js/**/*.js']
-    }
-  });
 
-  // Define the default task
-  grunt.registerTask('default', ['jshint']);
-
+        },
+        jscs: {
+        all: [
+            'Gruntfile.js', 'js/**/*js'
+        ],
+        options: {
+            config: '.jscsrc'
+        }
+    },
+    });
 };
-
-//src/foo.js
-if(7 == "7") alert(42);
