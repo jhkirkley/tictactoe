@@ -25,13 +25,14 @@ $(document).ready(function() {
 
     $("#glasses").click(function() {
 
-        $("#bcontainer").css({
+ /*       $("#bcontainer").css({
             'width': '30%',
             'float': 'left',
             '-webkit-transform': 'rotatey(60deg)',
             'transform': 'rotatey(60deg)'
         });
-
+*/      $("#bcontainer").toggleClass("one");
+        $("#bcontainer").toggleClass("three");
         $("#acontainer").toggleClass("hidden");
         $("#ccontainer").toggleClass("hidden");
         $("#acontainer").toggleClass("three");
