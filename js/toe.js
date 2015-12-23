@@ -25,13 +25,7 @@ $(document).ready(function() {
 
     $("#glasses").click(function() {
 
- /*       $("#bcontainer").css({
-            'width': '30%',
-            'float': 'left',
-            '-webkit-transform': 'rotatey(60deg)',
-            'transform': 'rotatey(60deg)'
-        });
-*/      $("#bcontainer").toggleClass("one");
+        $("#bcontainer").toggleClass("one");
         $("#bcontainer").toggleClass("three");
         $("#acontainer").toggleClass("hidden");
         $("#ccontainer").toggleClass("hidden");
@@ -84,9 +78,9 @@ $(document).ready(function() {
         $("#p-two-score").children("p").text(playerTwo.score);
     }
 }
-    function havaWinner(x, y, z) {
-     wins(playerName);
-     boardMsg(playerName + " won the game!");
+    function havaWinner(x, y, z, name) {
+     wins(name);
+     boardMsg(name + " won the game!");
      isWinner = 1;
      moveCount = 0;
      $( ".space:eq( x )" ).css( "background-color", "#C5EFF7" );
@@ -98,7 +92,7 @@ $(document).ready(function() {
  }
 
  if (bPlane[0] === n && bPlane[1] === n && bPlane[2] === n) {
-    wins(playerName);
+     wins(playerName);
      boardMsg(playerName + " won the game!");
      isWinner = 1;
      moveCount = 0;
