@@ -11,9 +11,6 @@ var playerTwo = {};
 playerTwo.score = 0;
 playerTwo.num = 2;
 
-function square(x) {
-  return x * x;
-}
 
 //status = parseInt(status);
 $(document).ready(function() {
