@@ -185,7 +185,6 @@ header {
   min-height: 30%
   height: 30%;
   width: 100%;
-  background-color: #C0392B;
 }
 #board{
   width: 100%;
@@ -193,7 +192,7 @@ header {
   text-align: center;
   font-size: 30px;
   font-family: helvetica;
-  color: white;
+  color:  #C0392B;
   margin-top: 10px;
 }
 
@@ -207,7 +206,7 @@ justify-content: space-around;
 width: 100%;
 height: 20%;
 font-size: 24px;
-background-color: #22313F;
+background-color: #34495E;
 color: white;
 padding-top: 2%;
 padding-bottom: 2%;
@@ -232,7 +231,7 @@ font-size: 24px;
 margin: auto;
 }
 .playerbox {
-  background-color: #34495E;
+  background-color: #22313F;
 }
 
 .active-player {
@@ -251,9 +250,10 @@ margin: auto;
 }
 
 #play {
-  background-color: #ff6600;
+  background-color: #FF9966;
+  height: 100%;
   color: white;
-  font-size: 18px;
+  font-size: 2em;
   margin: 10px;
 }
 
